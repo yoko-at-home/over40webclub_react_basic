@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 import './index.css'
-import { books } from './books'
+import { books } from './components/data/books'
+import Book from './components/pages/Book'
 
 function BookList() {
   return (
@@ -18,26 +19,6 @@ function BookList() {
   )
 }
 
-const Book = ({ img, title, author }) => {
-  const clickHandler = () => {
-    alert('Viva, Over 40 Web Club!!')
-  }
-  const complexClickHandler = (author) => {
-    console.log(author)
-  }
-  return (
-    <section className='book'>
-      <img src={img} alt='' />
-      <h2>{title}</h2>
-      <h4>{author}</h4>
-      <button type='button' onClick={clickHandler}>
-        clickHandler
-      </button>
-      <button type='button' onClick={() => complexClickHandler(author)}>
-        complexClickHandler
-      </button>
-    </section>
-  )
-}
+
 
 ReactDom.render(<BookList />, document.getElementById('root'))
